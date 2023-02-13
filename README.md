@@ -58,6 +58,9 @@ z
     ![plot](./Pictures/Customer_trusted.png)
     - accelerometer_landing_to_trusted.py: only store Accelerometer Readings from customers who agreed to share their data for research purposes 
     ![plot](./Pictures/Accelerometer_trusted.png)
+    - step_trainer_trusted.py: contain the Step Trainer Records data for customers who have accelerometer data and have agreed to share their data for research
 
-#### 
+#### Curated Zone
 - Use Glue jobs in AWS Glue Studio to process data:
+    - customer_curated.py : only store the Customer Records who agreed to share their data for research purposes and have accelerometer data
+    - machine_learning_curated.py : A Python script using Spark that creates an aggregated table that has each of the Step Trainer readings, and the associated accelerometer reading data for the same timestamp, but only for customers who have agreed to share their data, and populates a glue table called machine_learning_curated.
